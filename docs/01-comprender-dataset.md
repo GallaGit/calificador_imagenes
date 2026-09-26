@@ -26,6 +26,21 @@ La respuesta esperada se llama etiqueta. El modelo aprendera relacionando los pi
 
 Un informe o notebook de exploracion que confirme que el dataset se puede leer y que contiene las dos clases esperadas.
 
+La exploracion se ejecuta desde la raiz del proyecto con:
+
+```bash
+python src/explore_dataset.py
+```
+
+El script genera la figura `docs/figures/dataset-samples.png`. La figura se ignora en Git porque es un artefacto generado; puede abrirse localmente para revisar las muestras.
+
 ## Criterio para avanzar
 
 No debe haber archivos ilegibles o etiquetas desconocidas en la muestra revisada. La ruta del dataset y las decisiones de tamano y division deben estar confirmadas.
+
+## Decisiones confirmadas
+
+- Dataset local: `data/raw/train/`.
+- Entrada del modelo: `224 x 224 x 3`.
+- Division prevista: 80% entrenamiento y 20% prueba.
+- Hardware disponible: NVIDIA GeForce RTX 4060.
