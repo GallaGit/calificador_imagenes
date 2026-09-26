@@ -19,6 +19,30 @@ Usaremos `ImageDataGenerator` y `flow_from_directory()`. Este metodo lee las ima
 5. Crear los generadores de entrenamiento y prueba.
 6. Comprobar que Keras asigna correctamente las clases.
 
+## Implementacion
+
+La separacion se ejecuta desde la raiz del proyecto con:
+
+```bash
+python src/prepare_dataset.py
+```
+
+El proceso utiliza la semilla `42`, por lo que produce siempre la misma separacion. La configuracion actual usa `batch_size=32` y redimensiona las imagenes a `224 x 224` al cargarlas, sin crear copias redimensionadas de cada JPG.
+
+TensorFlow se incluye en `requirements.txt`. Si no esta instalado, primero hay que ejecutar:
+
+```bash
+pip install -r requirements.txt
+```
+
+Para crear solamente la separacion en un entorno donde TensorFlow aun no esta instalado:
+
+```bash
+python src/prepare_dataset.py --skip-generators
+```
+
+La prueba de los generadores requiere una version de Python compatible con TensorFlow. El entorno local utilizado para esta fase tiene Python `3.14.6`, version para la que no hay una instalacion de TensorFlow disponible actualmente.
+
 ## Resultado esperado
 
 Dos generadores funcionales: uno para entrenar y otro para evaluar. Las imagenes no se cargaran todas simultaneamente en memoria.
@@ -26,3 +50,14 @@ Dos generadores funcionales: uno para entrenar y otro para evaluar. Las imagenes
 ## Criterio para avanzar
 
 Los generadores deben encontrar las dos clases, producir batches con forma `(batch, 224, 224, 3)` y devolver etiquetas validas.
+
+## Resultado verificado
+
+La separacion esperada es:
+
+```text
+train/cat: 10000
+train/dog: 10000
+test/cat: 2500
+test/dog: 2500
+```
