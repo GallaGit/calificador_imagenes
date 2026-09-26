@@ -43,6 +43,22 @@ python src/prepare_dataset.py --skip-generators
 
 La prueba de los generadores requiere una version de Python compatible con TensorFlow. El entorno local utilizado para esta fase tiene Python `3.14.6`, version para la que no hay una instalacion de TensorFlow disponible actualmente.
 
+## Entorno utilizado
+
+Para no modificar la instalacion global de Python, el proyecto utiliza un entorno virtual externo en:
+
+```text
+C:\venvs\calificador_imagenes
+```
+
+Este entorno usa Python `3.11.9` y TensorFlow `2.21.0`. Para ejecutar el script con este entorno:
+
+```bash
+C:/venvs/calificador_imagenes/Scripts/python.exe src/prepare_dataset.py
+```
+
+La RTX 4060 no se utiliza desde TensorFlow instalado directamente en Windows nativo. El entrenamiento funcionara en CPU en esta configuracion. Para usar la GPU sera necesario configurar WSL2 o Docker con CUDA.
+
 ## Resultado esperado
 
 Dos generadores funcionales: uno para entrenar y otro para evaluar. Las imagenes no se cargaran todas simultaneamente en memoria.
