@@ -2,5 +2,8 @@
     "workbench.startupEditor": "readme",
     "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor"
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python.defaultInterpreterPath": "C:\\venvs\\calificador_imagenes\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true
 }
