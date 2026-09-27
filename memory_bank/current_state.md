@@ -29,9 +29,19 @@ Completada.
 - Cursor configurado para usar el interprete del proyecto.
 - Commits: `25fbe93`, `5011251` y `1721281`.
 
+### Fase 3, paso 1: crear el modelo
+
+Completada y verificada.
+
+- Script: `src/build_model.py`.
+- Arquitectura: EfficientNet-B0, GlobalAveragePooling2D y dos capas Dense.
+- Entrada: `(224, 224, 3)`.
+- Salida: `(2,)`, con probabilidades para `cat` y `dog`.
+- Este paso no entrena el modelo.
+
 ## Fase siguiente
 
-La Fase 3 consiste en construir y compilar la RNA basada en EfficientNet-B0. Todavia no se ha creado el modelo ni se ha iniciado el entrenamiento.
+La Fase 3 paso 1 esta completada. El siguiente trabajo es la Fase 4: entrenar y evaluar el modelo. Todavia no se ha iniciado el entrenamiento.
 
 ## Restricciones conocidas
 
