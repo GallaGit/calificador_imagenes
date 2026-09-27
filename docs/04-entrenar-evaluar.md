@@ -19,3 +19,15 @@ Durante el entrenamiento, el modelo hace predicciones, compara sus respuestas co
 ## Resultado esperado
 
 Una primera medida objetiva del rendimiento y graficas que permitan detectar sobreajuste.
+
+## Ejecucion
+
+Desde la raiz del proyecto:
+
+```powershell
+python src\train_model.py --baseline-epochs 1 --epochs 10
+```
+
+El script reserva el 10% del conjunto de entrenamiento para validacion y mantiene el
+conjunto de prueba separado hasta la evaluacion final. Guarda el historial en
+`artifacts/history.json` y la grafica en `artifacts/training_history.png`.
