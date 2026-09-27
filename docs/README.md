@@ -13,6 +13,29 @@ El trabajo se realizara por fases. No se avanzara a la siguiente fase hasta comp
 5. [Optimizar el modelo](05-optimizar-modelo.md)
 6. [Guardar y documentar el resultado](06-guardar-modelo.md)
 
+Las fases 1 a 3 ya fueron implementadas y verificadas antes del entrenamiento:
+
+- Fase 1 valida el dataset real y genera muestras visuales.
+- Fase 2 crea la division 80/20 y comprueba batches de Keras.
+- Fase 3 construye y compila EfficientNet-B0 y valida la forma de salida.
+- Fases 4 a 6 entrenan, optimizan, evalúan y exportan el modelo.
+
+## Stack tecnologico
+
+La referencia completa del stack, las versiones del entorno y la funcion de
+cada tecnologia se encuentra en
+[`memory_bank/technology_stack.md`](../memory_bank/technology_stack.md).
+
+Resumen del pipeline:
+
+- Python ejecuta los scripts y automatiza el flujo reproducible.
+- TensorFlow/Keras construye y entrena la red EfficientNet-B0.
+- Pillow y `ImageDataGenerator` preparan las imagenes.
+- Matplotlib genera las graficas y la matriz de confusion.
+- NumPy y scikit-learn procesan las predicciones y metricas.
+- JSON registra metadatos, historial y resultados.
+- Git mantiene el codigo versionado y evita subir artefactos pesados.
+
 ## Flujo de trabajo
 
 En cada fase seguiremos este orden:
@@ -42,9 +65,10 @@ data/
         └── dog/
 ```
 
-## Decisiones iniciales pendientes
+## Decisiones confirmadas
 
-- Confirmar la ruta exacta del dataset descargado.
-- Usar `224 x 224` como tamano final para coincidir con EfficientNet-B0.
-- Dividir los datos en 80% para entrenamiento y 20% para prueba.
-- Confirmar si el entrenamiento se realizara con GPU o CPU.
+- Dataset: `data/raw/train/`.
+- Tamano de entrada: `224 x 224 x 3`.
+- Division: 80% entrenamiento y 20% prueba.
+- Validacion: 10% del conjunto de entrenamiento durante `train_model.py`.
+- Hardware: CPU en Windows nativo; la RTX 4060 requiere WSL2 o CUDA configurado.

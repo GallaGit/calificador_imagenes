@@ -39,9 +39,14 @@ Completada y verificada.
 - Salida: `(2,)`, con probabilidades para `cat` y `dog`.
 - Este paso no entrena el modelo.
 
-## Fase siguiente
+## Fases 3 a 6: implementadas
 
-La Fase 3 paso 1 esta completada. El siguiente trabajo es la Fase 4: entrenar y evaluar el modelo. Todavia no se ha iniciado el entrenamiento.
+- `src/train_model.py` ejecuta el entrenamiento inicial, validacion, checkpoint,
+  early stopping, evaluacion, matriz de confusion y exportacion.
+- `src/predict.py` y `src/app.py` permiten reutilizar el modelo con una imagen.
+- Los resultados se guardan en `models/` y `artifacts/`.
+- El entrenamiento real depende de ejecutar el script con TensorFlow y el dataset
+  preparado; no se ejecuta automaticamente porque puede tardar varias horas en CPU.
 
 ## Restricciones conocidas
 

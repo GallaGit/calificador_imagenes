@@ -9,4 +9,7 @@ data/processed/train/
 data/processed/test/
 models/*.keras
 models/*.h5
+models/metadata.json
+artifacts/*.json
+artifacts/*.png
 docs/figures/*.png
