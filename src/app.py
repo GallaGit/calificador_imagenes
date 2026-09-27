@@ -1,4 +1,7 @@
-from utils import db_connect
-engine = db_connect()
+"""Entry point for classifying an image with the trained model."""
 
-# your code here
+from predict import main
+
+
+if __name__ == "__main__":
+    main()

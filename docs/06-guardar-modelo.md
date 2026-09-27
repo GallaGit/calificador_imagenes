@@ -15,3 +15,12 @@ Dejar el modelo listo para reutilizarlo sin tener que entrenarlo de nuevo.
 ## Resultado esperado
 
 Un archivo de modelo reutilizable, una explicacion de sus resultados y unas instrucciones claras para reproducir el proyecto.
+
+## Usar el modelo
+
+```powershell
+python src\app.py ruta\a\imagen.jpg
+```
+
+El modelo queda en `models/cats_vs_dogs.keras`, los metadatos y metricas en
+`models/metadata.json`, y las graficas y matriz de confusion en `artifacts/`.
