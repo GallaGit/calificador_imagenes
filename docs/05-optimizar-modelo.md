@@ -25,3 +25,7 @@ No siempre el ultimo modelo entrenado es el mejor. A veces el modelo empieza a m
 ## Resultado esperado
 
 Un modelo optimizado y una comparacion clara entre el primer entrenamiento y el mejor resultado.
+
+La implementacion se encuentra en `src/train_model.py`. El mejor checkpoint se guarda
+en `models/best_model.keras` y se copia como `models/cats_vs_dogs.keras` despues de
+evaluarlo.
